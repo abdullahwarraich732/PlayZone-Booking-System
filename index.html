@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playzone - Premium Sports Booking System</title>
+    <meta
+      name="description"
+      content="Book premium sports facilities including cricket, badminton, futsal, basketball, tennis, and table tennis. Experience world-class facilities with easy online booking."
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top"
+    >
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <div class="brand-icon me-2">
+            <i class="fas fa-play"></i>
+          </div>
+          <span class="brand-text">Playzone</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">
+                <i class="fas fa-home me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="index.html">
+                <i class="fas fa-home me-1"></i>Game
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="index.html">
+                <i class="fas fa-home me-1"></i>Booknow
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">
+                <i class="fas fa-home me-1"></i>Contact
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="admin.html">
+                <i class="fas fa-cog me-1"></i>Admin
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8">
+            <h1 class="hero-title">
+              Welcome to <span class="text-warning">Playzone</span>
+            </h1>
+            <p class="hero-subtitle">
+              Your premier destination for sports and recreation. Book your
+              favorite games and enjoy world-class facilities.
+            </p>
+
+            <div class="hero-features">
+              <div class="feature-badge">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Sargodha, Pakistan</span>
+              </div>
+              <div class="feature-badge">
+                <i class="fas fa-clock"></i>
+                <span>Open 6 AM - 11 PM</span>
+              </div>
+              <div class="feature-badge">
+                <i class="fas fa-star"></i>
+                <span>4.5 Rating</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section py-5">
+      <div class="container">
+        <div class="row text-center mb-5">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="section-title">Why Choose Playzone?</h2>
+            <p class="section-subtitle">
+              Experience the best in sports and recreation with our premium
+              facilities and services
+            </p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="feature-card text-center">
+              <div class="feature-icon bg-primary">
+                <i class="fas fa-clock"></i>
+              </div>
+              <h4>Easy Booking</h4>
+              <p>Simple online booking system with real-time availability</p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="feature-card text-center">
+              <div class="feature-icon bg-success">
+                <i class="fas fa-star"></i>
+              </div>
+              <h4>Premium Facilities</h4>
+              <p>World-class equipment and well-maintained courts</p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="feature-card text-center">
+              <div class="feature-icon bg-purple">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <h4>Prime Location</h4>
+              <p>Conveniently located with easy access and parking</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Games Section -->
+    <section class="games-section py-5 bg-light">
+      <div class="container">
+        <div class="row text-center mb-5">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="section-title">Available Games</h2>
+            <p class="section-subtitle">
+              Choose from our wide variety of sports and activities
+            </p>
+          </div>
+        </div>
+
+        <div class="row g-4" id="gamesContainer">
+          <!-- Games will be loaded dynamically -->
+        </div>
+      </div>
+    </section>
+
+
+<section class="py-5" style="background-color: #fff;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="badge rounded-pill px-4 py-2 fw-semibold" style="background-color: #f3e8ff; color: #7c3aed;">
+        <i class="bi bi-envelope-fill me-1"></i> Get In Touch
+      </span>
+      <h2 class="fw-bold mt-3">Contact Us</h2>
+      <p class="text-muted fs-5 mb-0">Have questions or need assistance? We're here to help you make the most<br>of your sports experience</p>
+    </div>
+
+    <div class="row gy-5 mt-4">
+      <!-- Left Column -->
+      <div class="col-lg-6">
+        <h4 class="fw-bold mb-3">Get in Touch</h4>
+        <p class="text-muted mb-4 fs-6">
+          Whether you have questions about booking, facilities, or need technical support, <br>
+          our friendly team is ready to assist you.
+        </p>
+
+        <!-- Phone -->
+        <div class="d-flex align-items-start mb-4">
+          <div class="p-3 bg-primary bg-opacity-10 text-primary rounded-3 me-3">
+            <i class="bi bi-telephone-fill fs-4"></i>
+          </div>
+          <div>
+            <h6 class="fw-bold mb-1">Phone</h6>
+            <p class="text-muted mb-0">+1 (555) 123-4567</p>
+            <small class="text-muted">Mon–Fri from 8am to 8pm</small>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="d-flex align-items-start mb-4">
+          <div class="p-3 bg-success bg-opacity-10 text-success rounded-3 me-3">
+            <i class="bi bi-envelope-fill fs-4"></i>
+          </div>
+          <div>
+            <h6 class="fw-bold mb-1">Email</h6>
+            <p class="text-muted mb-0">support@playzone.com</p>
+            <small class="text-muted">We'll respond within 24 hours</small>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="d-flex align-items-start mb-4">
+          <div class="p-3 bg-warning bg-opacity-10 text-warning rounded-3 me-3">
+            <i class="bi bi-geo-alt-fill fs-4"></i>
+          </div>
+          <div>
+            <h6 class="fw-bold mb-1">Location</h6>
+            <p class="text-muted mb-0">123 Sports Complex Drive</p>
+            <small class="text-muted">Downtown, City 12345</small>
+          </div>
+        </div>
+
+        <!-- Hours -->
+        <div class="d-flex align-items-start mb-4">
+          <div class="p-3 rounded-3 me-3" style="background-color: #f3e8ff;">
+            <i class="bi bi-clock-fill fs-4" style="color: #a855f7;"></i>
+          </div>
+          <div>
+            <h6 class="fw-bold mb-1">Operating Hours</h6>
+            <p class="text-muted mb-0">Monday – Sunday: 6:00 AM – 11:00 PM</p>
+            <small class="text-muted">Holiday hours may vary</small>
+          </div>
+        </div>
+
+        <!-- Map Box -->
+        <div class="bg-light rounded-4 text-center py-5 mt-4 shadow-sm">
+          <i class="bi bi-geo-alt fs-1 text-muted"></i>
+          <p class="text-muted mt-2 mb-0 fs-6">Interactive Map Coming Soon</p>
+        </div>
+      </div>
+
+      <!-- Right Column (Form) -->
+      <div class="col-lg-6">
+        <div class="bg-light p-4 p-md-5 rounded-4 shadow-sm">
+          <h5 class="fw-bold mb-4">Send us a Message</h5>
+          <form>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Name *</label>
+                <input type="text" class="form-control" placeholder="Your full name" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Email *</label>
+                <input type="email" class="form-control" placeholder="your.email@example.com" required>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Subject *</label>
+                <input type="text" class="form-control" placeholder="How can we help you?" required>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Message *</label>
+                <textarea rows="5" class="form-control" placeholder="Tell us more about your inquiry..." required></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary w-100 fw-semibold">
+                  <i class="bi bi-send me-2"></i>Send Message
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer style="background-color: #0b1120;" class="text-white pt-5 pb-3">
+  <div class="container">
+    <div class="row gy-5">
+
+      <!-- Brand and Description -->
+      <div class="col-lg-3">
+        <div class="d-flex align-items-center mb-3">
+          <div class="bg-primary d-flex align-items-center justify-content-center rounded-2" style="width: 44px; height: 44px;">
+            <i class="bi bi-play-fill fs-4 text-white"></i>
+          </div>
+          <h5 class="fw-bold ms-2 mb-0">Playzone</h5>
+        </div>
+        <p class="text-secondary small">
+          Your premier destination for sports facility booking. Professional courts, easy online booking, and exceptional service for all your sporting needs.
+        </p>
+        <div class="d-flex gap-2 mt-3">
+          <a href="#" class="btn btn-dark rounded-2 px-2 py-1"><i class="bi bi-facebook fs-5"></i></a>
+          <a href="#" class="btn btn-dark rounded-2 px-2 py-1"><i class="bi bi-twitter fs-5"></i></a>
+          <a href="#" class="btn btn-dark rounded-2 px-2 py-1"><i class="bi bi-instagram fs-5"></i></a>
+          <a href="#" class="btn btn-dark rounded-2 px-2 py-1"><i class="bi bi-youtube fs-5"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-2">
+        <h6 class="fw-bold mb-3">Quick Links</h6>
+        <ul class="list-unstyled text-secondary small">
+          <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Home</a></li>
+          <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Games</a></li>
+          <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Book Now</a></li>
+          <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Our Sports -->
+      <div class="col-lg-3">
+        <h6 class="fw-bold mb-3">Our Sports</h6>
+        <ul class="list-unstyled text-secondary small">
+          <li class="mb-2">Cricket</li>
+          <li class="mb-2">Futsal</li>
+          <li class="mb-2">Badminton</li>
+          <li class="mb-2">Basketball</li>
+          <li class="mb-2">Tennis</li>
+          <li class="mb-2">Volleyball</li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-lg-4">
+        <h6 class="fw-bold mb-3">Contact Info</h6>
+        <ul class="list-unstyled text-secondary small">
+          <li class="d-flex align-items-start mb-3">
+            <i class="bi bi-geo-alt-fill text-primary me-2 fs-5"></i>
+            <span>123 Sports Complex Drive<br>Downtown, City 12345</span>
+          </li>
+          <li class="d-flex align-items-center mb-3">
+            <i class="bi bi-telephone-fill text-primary me-2 fs-5"></i>
+            <span>+1 (555) 123-4567</span>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="bi bi-envelope-fill text-primary me-2 fs-5"></i>
+            <span>support@playzone.com</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="border-secondary mt-5">
+
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-secondary small mt-3">
+      <p class="mb-2 mb-md-0">© 2025 Playzone Booking System. All rights reserved.</p>
+      <div class="d-flex gap-3">
+        <a href="#" class="text-secondary text-decoration-none">Privacy Policy</a>
+        <a href="#" class="text-secondary text-decoration-none">Terms of Service</a>
+        <a href="#" class="text-secondary text-decoration-none">Support</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

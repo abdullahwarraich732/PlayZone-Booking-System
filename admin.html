@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - Playzone</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <div class="brand-icon me-2">
+            <i class="fas fa-play"></i>
+          </div>
+          <span class="brand-text">Playzone</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">
+                <i class="fas fa-home me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="admin.html">
+                <i class="fas fa-cog me-1"></i>Admin
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Admin Dashboard -->
+    <section class="admin-section py-5">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col">
+            <h1 class="admin-title">Admin Dashboard</h1>
+            <p class="text-muted">
+              Manage your playzone bookings and track performance
+            </p>
+          </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="row g-4 mb-5">
+          <div class="col-md-3">
+            <div class="stats-card">
+              <div class="stats-content">
+                <div class="stats-info">
+                  <p class="stats-label">Total Bookings</p>
+                  <h3 class="stats-value" id="totalBookings">0</h3>
+                </div>
+                <div class="stats-icon bg-primary">
+                  <i class="fas fa-calendar"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="stats-card">
+              <div class="stats-content">
+                <div class="stats-info">
+                  <p class="stats-label">Confirmed</p>
+                  <h3 class="stats-value text-success" id="confirmedBookings">
+                    0
+                  </h3>
+                </div>
+                <div class="stats-icon bg-success">
+                  <i class="fas fa-check"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="stats-card">
+              <div class="stats-content">
+                <div class="stats-info">
+                  <p class="stats-label">Pending</p>
+                  <h3 class="stats-value text-warning" id="pendingBookings">
+                    0
+                  </h3>
+                </div>
+                <div class="stats-icon bg-warning">
+                  <i class="fas fa-users"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="stats-card">
+              <div class="stats-content">
+                <div class="stats-info">
+                  <p class="stats-label">Revenue</p>
+                  <h3 class="stats-value text-purple" id="totalRevenue">₹0</h3>
+                </div>
+                <div class="stats-icon bg-purple">
+                  <i class="fas fa-rupee-sign"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filters and Bookings Table -->
+        <div class="admin-card">
+          <!-- Filters -->
+          <div class="admin-card-header">
+            <div class="filter-buttons">
+              <button class="btn btn-primary active" data-filter="all">
+                All
+                <span class="badge bg-light text-dark ms-1" id="allCount"
+                  >0</span
+                >
+              </button>
+              <button class="btn btn-outline-warning" data-filter="pending">
+                Pending
+                <span class="badge bg-warning ms-1" id="pendingCount">0</span>
+              </button>
+              <button class="btn btn-outline-success" data-filter="confirmed">
+                Confirmed
+                <span class="badge bg-success ms-1" id="confirmedCount">0</span>
+              </button>
+              <button class="btn btn-outline-danger" data-filter="cancelled">
+                Cancelled
+                <span class="badge bg-danger ms-1" id="cancelledCount">0</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Bookings Table -->
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead class="table-light">
+                <tr>
+                  <th>Customer</th>
+                  <th>Game</th>
+                  <th>Date & Time</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="bookingsTableBody">
+                <!-- Bookings will be loaded dynamically -->
+              </tbody>
+            </table>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="text-center py-5" style="display: none">
+              <i
+                class="fas fa-calendar-times text-muted mb-3"
+                style="font-size: 3rem"
+              ></i>
+              <h4 class="text-muted">No bookings found</h4>
+              <p class="text-muted">
+                Bookings will appear here once customers start making
+                reservations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-danger text-white">
+            <h5 class="modal-title">
+              <i class="fas fa-exclamation-triangle me-2"></i>Confirm Delete
+            </h5>
+          </div>
+          <div class="modal-body">
+            <p>
+              Are you sure you want to delete this booking? This action cannot
+              be undone.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button type="button" class="btn btn-danger" id="confirmDeleteBtn">
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>
